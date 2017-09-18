@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Audio Test</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <div style="width: 50%">
+        <audio id="aud1"  controls src="http://sampleswap.org/samples-ghost/%20MAY%202014%20LATEST%20ADDITIONS/FILM%20and%20TV%20and%20RADIO/475[kb]flight-control-radio-chatter.mp3.mp3"></audio>
+        <button type="button" id="a1">play Audio 1</button>
+        
+    </div>
+    <div  style="width: 50%">
+        <audio id="aud2" controls src="http://sampleswap.org/samples-ghost/%20MAY%202014%20LATEST%20ADDITIONS/VOCALS%20and%20SPOKEN%20WORD/2445[kb]lofi-kids-voice-and-tv.wav.mp3"></audio>
+        <button type="button" id="a2">play Audio 2</button>
+        
+    </div>
+</body>
+<script>
+    $(document).ready( () =>{
+        var first = document.getElementById('aud1')
+        var second = document.getElementById('aud2')
+        
+        $('button').on('click', (e) =>{
+            if( e.currentTarget.id == 'a1'){
+                // A1 button clicked
+                if (!second.paused){ second.pause()}
+                first.play()
+            }else if( e.currentTarget.id == 'a2'){
+                // A2 button clicked
+                if (!first.paused){ first.pause()}
+                second.play()
+            }
+        })
+    })
+
+</script>
+
+</html>
